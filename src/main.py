@@ -5,6 +5,7 @@ import cv2
 import tensorflow as tf
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from model import create_model
+from evaluation import evaluate_model
 
 # In[2]:
 
@@ -89,7 +90,6 @@ history = model.fit(data_train,
                     #callbacks=callbacks
                    )
 
-
-test_loss, test_acc = model.evaluate(data_test)
-
-print('Test accuracy: {:2.2f}%'.format(test_acc*100))
+# Evaluate the model
+accuracy = evaluate_model(model, data_test)
+print("Test accuracy:", accuracy)
