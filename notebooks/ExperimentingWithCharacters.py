@@ -17,7 +17,6 @@ import cv2
 
 data_dir = '../dataset/township_alphabet_data'
 image_size = (64, 64)  # Adjust the image size
-threshold_value = 150  # Adjust this threshold as needed
 
 def load_and_process(data_dir):
     data = []  # To store image data
